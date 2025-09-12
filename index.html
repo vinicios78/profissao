@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal da Agronomia - Guia Completo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -24,11 +25,32 @@
             padding: 1rem;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path fill="white" d="M50 15 L60 40 L85 40 L65 55 L75 85 L50 70 L25 85 L35 55 L15 40 L40 40 Z"></path></svg>');
+            background-size: 200px;
         }
         
         nav {
             background-color: #1b5e20;
             padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         nav ul {
@@ -48,6 +70,12 @@
             padding: 0.5rem 1rem;
             border-radius: 4px;
             transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav a i {
+            margin-right: 0.5rem;
         }
         
         nav a:hover {
@@ -66,6 +94,24 @@
             background-color: #e8f5e9;
             border-radius: 8px;
             margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle fill="%232e7d32" cx="50" cy="50" r="40"/></svg>');
+            background-size: 300px;
         }
         
         .hero h1 {
@@ -93,6 +139,12 @@
             border-bottom: 2px solid #c8e6c9;
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section h2 i {
+            margin-right: 0.5rem;
         }
         
         .grid {
@@ -107,6 +159,8 @@
             border-radius: 8px;
             padding: 1.5rem;
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         
         .card:hover {
@@ -117,6 +171,54 @@
         .card h3 {
             color: #1b5e20;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card h3 i {
+            margin-right: 0.5rem;
+        }
+        
+        .card-image {
+            height: 180px;
+            background-color: #c8e6c9;
+            border-radius: 6px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .card-image i {
+            font-size: 4rem;
+            color: #2e7d32;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        tr:hover {
+            background-color: #f1f8e9;
         }
         
         .faq-item {
@@ -128,10 +230,16 @@
             color: #2e7d32;
             margin-bottom: 0.5rem;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        
+        .faq-question i {
+            margin-right: 0.5rem;
         }
         
         .faq-answer {
-            padding-left: 1rem;
+            padding-left: 1.5rem;
             border-left: 3px solid #c8e6c9;
         }
         
@@ -158,6 +266,27 @@
             background-color: #1b5e20;
         }
         
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #c8e6c9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background-color: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #2e7d32;
+        }
+        
         @media (max-width: 768px) {
             .grid {
                 grid-template-columns: 1fr;
@@ -167,61 +296,89 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Portal da Agronomia</h1>
-        <p>Tudo sobre o curso e a profissão de Engenheiro Agrônomo</p>
+        <div class="header-background"></div>
+        <div class="header-content">
+            <h1><i class="fas fa-leaf"></i> Portal da Agronomia</h1>
+            <p>Tudo sobre o curso e a profissão de Engenheiro Agrônomo</p>
+        </div>
     </header>
     
     <nav>
         <ul>
-            <li><a href="#sobre">Sobre o Curso</a></li>
-            <li><a href="#grade">Grade Curricular</a></li>
-            <li><a href="#mercado">Mercado de Trabalho</a></li>
-            <li><a href="#faculdades">Melhores Faculdades</a></li>
-            <li><a href="#faq">Perguntas Frequentes</a></li>
+            <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre o Curso</a></li>
+            <li><a href="#grade"><i class="fas fa-book"></i> Grade Curricular</a></li>
+            <li><a href="#notas"><i class="fas fa-chart-line"></i> Notas de Corte</a></li>
+            <li><a href="#mercado"><i class="fas fa-briefcase"></i> Mercado de Trabalho</a></li>
+            <li><a href="#faculdades"><i class="fas fa-graduation-cap"></i> Melhores Faculdades</a></li>
+            <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
         </ul>
     </nav>
     
     <div class="container">
         <div class="hero">
-            <h1>Agronomia: Ciência que Alimenta o Mundo</h1>
-            <p>Descubra tudo sobre uma das profissões mais importantes para o futuro da humanidade. Da produção de alimentos à preservação ambiental, o engenheiro agrônomo é peça fundamental no desenvolvimento sustentável.</p>
-            <a href="#sobre" class="btn">Comece a Explorar</a>
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <h1>Agronomia: Ciência que Alimenta o Mundo</h1>
+                <p>Descubra tudo sobre uma das profissões mais importantes para o futuro da humanidade. Da produção de alimentos à preservação ambiental, o engenheiro agrônomo é peça fundamental no desenvolvimento sustentável.</p>
+                <a href="#sobre" class="btn">Comece a Explorar</a>
+            </div>
         </div>
         
         <section id="sobre" class="section">
-            <h2>Sobre o Curso de Agronomia</h2>
+            <h2><i class="fas fa-info-circle"></i> Sobre o Curso de Agronomia</h2>
             <p>O curso de Agronomia, também conhecido como Engenharia Agronômica, é uma graduação com duração média de 5 anos que forma profissionais capacitados para melhorar e aumentar a produção agrícola e pecuária, sempre com foco na sustentabilidade ambiental.</p>
+            
+            <div class="image-placeholder">
+                <i class="fas fa-tractor"></i> Imagem: Estudantes em campo de prática agrícola
+            </div>
             
             <div class="grid">
                 <div class="card">
-                    <h3>Perfil do Estudante</h3>
+                    <h3><i class="fas fa-user-graduate"></i> Perfil do Estudante</h3>
+                    <div class="card-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
                     <p>Interesse por ciências biológicas, tecnologia, meio ambiente e atividades ao ar livre. Habilidades em gestão, resolução de problemas e capacidade de análise são importantes.</p>
                 </div>
                 
                 <div class="card">
-                    <h3>Duração e Titulação</h3>
+                    <h3><i class="fas fa-clock"></i> Duração e Titulação</h3>
+                    <div class="card-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
                     <p>5 anos (10 semestres) em período integral. Ao concluir o curso, o aluno recebe o título de Engenheiro Agrônomo e precisa registrar seu diploma no CREA (Conselho Regional de Engenharia e Agronomia).</p>
                 </div>
                 
                 <div class="card">
-                    <h3>Mercado em Expansão</h3>
+                    <h3><i class="fas fa-chart-line"></i> Mercado em Expansão</h3>
+                    <div class="card-image">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
                     <p>O Brasil é um dos maiores produtores de alimentos do mundo, o que garante um mercado de trabalho aquecido e com diversas oportunidades para os engenheiros agrônomos.</p>
                 </div>
             </div>
         </section>
         
         <section id="grade" class="section">
-            <h2>Grade Curricular</h2>
+            <h2><i class="fas fa-book"></i> Grade Curricular</h2>
             <p>A grade curricular do curso de Agronomia é bastante diversificada, mesclando disciplinas das áreas de ciências exatas, biológicas e humanas. Confira as principais disciplinas:</p>
+            
+            <div class="image-placeholder">
+                <i class="fas fa-book-open"></i> Imagem: Estudantes em laboratório de solos
+            </div>
             
             <div class="grid">
                 <div class="card">
-                    <h3>Ciências Básicas</h3>
+                    <h3><i class="fas fa-flask"></i> Ciências Básicas</h3>
                     <ul>
                         <li>Matemática e Estatística</li>
                         <li>Física Geral</li>
@@ -232,7 +389,7 @@
                 </div>
                 
                 <div class="card">
-                    <h3>Formação Específica</h3>
+                    <h3><i class="fas fa-seedling"></i> Formação Específica</h3>
                     <ul>
                         <li>Solos e Nutrição de Plantas</li>
                         <li>Fitotecnia (Produção Vegetal)</li>
@@ -244,7 +401,7 @@
                 </div>
                 
                 <div class="card">
-                    <h3>Tecnologia e Gestão</h3>
+                    <h3><i class="fas fa-laptop"></i> Tecnologia e Gestão</h3>
                     <ul>
                         <li>Mecanização Agrícola</li>
                         <li>Agricultura de Precisão</li>
@@ -258,129 +415,71 @@
             <p>Além das disciplinas teóricas, o curso conta com muitas atividades práticas em laboratórios, fazendas experimentais e estágios supervisionados.</p>
         </section>
         
+        <section id="notas" class="section">
+            <h2><i class="fas fa-chart-line"></i> Notas de Corte SISU 2023</h2>
+            <p>Confira as notas de corte aproximadas para o curso de Agronomia em algumas das principais universidades brasileiras:</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Instituição</th>
+                            <th>Localidade</th>
+                            <th>Nota de Corte</th>
+                            <th>Turno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>UFV - Universidade Federal de Viçosa</td>
+                            <td>Viçosa/MG</td>
+                            <td>761</td>
+                            <td>Integral</td>
+                        </tr>
+                        <tr>
+                            <td>USP/ESALQ</td>
+                            <td>Piracicaba/SP</td>
+                            <td>794</td>
+                            <td>Integral</td>
+                        </tr>
+                        <tr>
+                            <td>UFLA - Universidade Federal de Lavras</td>
+                            <td>Lavras/MG</td>
+                            <td>752</td>
+                            <td>Integral</td>
+                        </tr>
+                        <tr>
+                            <td>UFRGS - Universidade Federal do RS</td>
+                            <td>Porto Alegre/RS</td>
+                            <td>743</td>
+                            <td>Integral</td>
+                        </tr>
+                        <tr>
+                            <td>UnB - Universidade de Brasília</td>
+                            <td>Brasília/DF</td>
+                            <td>734</td>
+                            <td>Integral</td>
+                        </tr>
+                        <tr>
+                            <td>UFMT - Universidade Federal de MT</td>
+                            <td>Cuiabá/MT</td>
+                            <td>698</td>
+                            <td>Integral</td>
+                        </tr>
+                        <tr>
+                            <td>UFPI - Universidade Federal do PI</td>
+                            <td>Teresina/PI</td>
+                            <td>682</td>
+                            <td>Integral</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="highlight">
+                <p><strong>Observação:</strong> As notas de corte variam a cada ano com base no número de vagas, candidatos e desempenho geral dos participantes do ENEM. Valores apresentados são referentes ao SISU 2023.</p>
+            </div>
+        </section>
+        
         <section id="mercado" class="section">
-            <h2>Mercado de Trabalho</h2>
-            <p>O Engenheiro Agrônomo possui um vasto campo de atuação, com oportunidades em diversos setores do agronegócio.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h3>Áreas de Atuação</h3>
-                    <ul>
-                        <li>Produção agrícola e pecuária</li>
-                        <li>Defesa sanitária vegetal e animal</li>
-                        <li>Consultoria e assistência técnica</li>
-                        <li>Pesquisa e desenvolvimento</li>
-                        <li>Ensino e extensão rural</li>
-                        <li>Comércio de insumos agrícolas</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>Setores de Trabalho</h3>
-                    <ul>
-                        <li>Propriedades rurais</li>
-                        <li>Cooperativas agrícolas</li>
-                        <li>Empresas de insumos</li>
-                        <li>Indústrias de alimentos</li>
-                        <li>Órgãos governamentais</li>
-                        <li>Instituições de pesquisa</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>Remuneração</h3>
-                    <p>O piso salarial do Engenheiro Agrônomo varia por estado, mas geralmente fica entre R$ 4.500 e R$ 8.000 para iniciantes. Profissionais com especialização e experiência podem alcançar salários significativamente maiores.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="faculdades" class="section">
-            <h2>Melhores Faculdades de Agronomia</h2>
-            <p>O Brasil possui excelentes instituições de ensino que oferecem o curso de Agronomia. Confira algumas das melhores:</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h3>Públicas</h3>
-                    <ul>
-                        <li>ESALQ/USP (Piracicaba-SP)</li>
-                        <li>UFV (Viçosa-MG)</li>
-                        <li>UFRGS (Porto Alegre-RS)</li>
-                        <li>UnB (Brasília-DF)</li>
-                        <li>UFLA (Lavras-MG)</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>Privadas</h3>
-                    <ul>
-                        <li>PUC-PR (Curitiba-PR)</li>
-                        <li>UNESP (Jaboticabal-SP)</li>
-                        <li>UFU (Uberlândia-MG)</li>
-                        <li>UNOESTE (Presidente Prudente-SP)</li>
-                        <li>UNIP (diversas cidades)</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>Como Escolher</h3>
-                    <p>Considere fatores como: grade curricular, infraestrutura da instituição, oportunidades de estágio, localização, conceito no MEC e valor das mensalidades (no caso de instituições privadas).</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="faq" class="section">
-            <h2>Perguntas Frequentes</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">Qual é a diferença entre Agronomia, Zootecnia e Engenharia Agrícola?</div>
-                <div class="faq-answer">
-                    <p>Enquanto a Agronomia foca no cultivo de plantas e na produção vegetal como um todo, a Zootecnia é especializada na produção animal. A Engenharia Agrícola está mais voltada para o desenvolvimento de máquinas, equipamentos e infraestrutura para o agronegócio.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">É necessário gostar de trabalhar ao ar livre?</div>
-                <div class="faq-answer">
-                    <p>Sim, embora existam oportunidades em ambientes fechados (laboratórios, escritórios), a profissão exige contato frequente com o campo e atividades práticas em fazendas e propriedades rurais.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Como é o estágio na Agronomia?</div>
-                <div class="faq-answer">
-                    <p>O estágio é obrigatório e geralmente realizado em propriedades rurais, empresas do agronegócio, cooperativas ou instituições de pesquisa. É uma oportunidade valiosa para aplicar os conhecimentos adquiridos e fazer networking.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Quais as especializações possíveis?</div>
-                <div class="faq-answer">
-                    <p>Existem diversas pós-graduações disponíveis, como: Fitotecnia, Solos e Nutrição de Plantas, Defesa Sanitária, Irrigação, Agricultura de Precisão, Gestão Ambiental, entre outras.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">A profissão é regulamentada?</div>
-                <div class="faq-answer">
-                    <p>Sim, a profissão de Engenheiro Agrônomo é regulamentada por lei. Após concluir o curso, é necessário registrar o diploma no CREA (Conselho Regional de Engenharia e Agronomia) para exercer legalmente a profissão.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    <footer>
-        <p>Portal da Agronomia - Guia Completo sobre o Curso e a Profissão</p>
-        <p>Desenvolvido para auxiliar estudantes na escolha de sua carreira - 2023</p>
-    </footer>
-
-    <script>
-        // JavaScript para tornar as perguntas FAQ clicáveis
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
-            });
-        });
-    </script>
-</body>
-</html>
+            <h2><i class="fas fa-b

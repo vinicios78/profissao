@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal da Agronomia - Guia Completo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f9f1;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        nav {
+            background-color: #1b5e20;
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #2e7d32;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #2e7d32;
+            border-bottom: 2px solid #c8e6c9;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .card {
+            background-color: #f1f8e9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card h3 {
+            color: #1b5e20;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            padding-left: 1rem;
+            border-left: 3px solid #c8e6c9;
+        }
+        
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #1b5e20;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portal da Agronomia</h1>
+        <p>Tudo sobre o curso e a profissão de Engenheiro Agrônomo</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre o Curso</a></li>
+            <li><a href="#grade">Grade Curricular</a></li>
+            <li><a href="#mercado">Mercado de Trabalho</a></li>
+            <li><a href="#faculdades">Melhores Faculdades</a></li>
+            <li><a href="#faq">Perguntas Frequentes</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="hero">
+            <h1>Agronomia: Ciência que Alimenta o Mundo</h1>
+            <p>Descubra tudo sobre uma das profissões mais importantes para o futuro da humanidade. Da produção de alimentos à preservação ambiental, o engenheiro agrônomo é peça fundamental no desenvolvimento sustentável.</p>
+            <a href="#sobre" class="btn">Comece a Explorar</a>
+        </div>
+        
+        <section id="sobre" class="section">
+            <h2>Sobre o Curso de Agronomia</h2>
+            <p>O curso de Agronomia, também conhecido como Engenharia Agronômica, é uma graduação com duração média de 5 anos que forma profissionais capacitados para melhorar e aumentar a produção agrícola e pecuária, sempre com foco na sustentabilidade ambiental.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Perfil do Estudante</h3>
+                    <p>Interesse por ciências biológicas, tecnologia, meio ambiente e atividades ao ar livre. Habilidades em gestão, resolução de problemas e capacidade de análise são importantes.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Duração e Titulação</h3>
+                    <p>5 anos (10 semestres) em período integral. Ao concluir o curso, o aluno recebe o título de Engenheiro Agrônomo e precisa registrar seu diploma no CREA (Conselho Regional de Engenharia e Agronomia).</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Mercado em Expansão</h3>
+                    <p>O Brasil é um dos maiores produtores de alimentos do mundo, o que garante um mercado de trabalho aquecido e com diversas oportunidades para os engenheiros agrônomos.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="grade" class="section">
+            <h2>Grade Curricular</h2>
+            <p>A grade curricular do curso de Agronomia é bastante diversificada, mesclando disciplinas das áreas de ciências exatas, biológicas e humanas. Confira as principais disciplinas:</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Ciências Básicas</h3>
+                    <ul>
+                        <li>Matemática e Estatística</li>
+                        <li>Física Geral</li>
+                        <li>Química Geral e Orgânica</li>
+                        <li>Biologia Celular</li>
+                        <li>Bioquímica</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Formação Específica</h3>
+                    <ul>
+                        <li>Solos e Nutrição de Plantas</li>
+                        <li>Fitotecnia (Produção Vegetal)</li>
+                        <li>Zootecnia (Produção Animal)</li>
+                        <li>Fitopatologia (Doenças de Plantas)</li>
+                        <li>Entomologia Agrícola (Pragas)</li>
+                        <li>Irrigação e Drenagem</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Tecnologia e Gestão</h3>
+                    <ul>
+                        <li>Mecanização Agrícola</li>
+                        <li>Agricultura de Precisão</li>
+                        <li>Gestão Ambiental</li>
+                        <li>Economia Rural</li>
+                        <li>Administração Agroindustrial</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p>Além das disciplinas teóricas, o curso conta com muitas atividades práticas em laboratórios, fazendas experimentais e estágios supervisionados.</p>
+        </section>
+        
+        <section id="mercado" class="section">
+            <h2>Mercado de Trabalho</h2>
+            <p>O Engenheiro Agrônomo possui um vasto campo de atuação, com oportunidades em diversos setores do agronegócio.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Áreas de Atuação</h3>
+                    <ul>
+                        <li>Produção agrícola e pecuária</li>
+                        <li>Defesa sanitária vegetal e animal</li>
+                        <li>Consultoria e assistência técnica</li>
+                        <li>Pesquisa e desenvolvimento</li>
+                        <li>Ensino e extensão rural</li>
+                        <li>Comércio de insumos agrícolas</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Setores de Trabalho</h3>
+                    <ul>
+                        <li>Propriedades rurais</li>
+                        <li>Cooperativas agrícolas</li>
+                        <li>Empresas de insumos</li>
+                        <li>Indústrias de alimentos</li>
+                        <li>Órgãos governamentais</li>
+                        <li>Instituições de pesquisa</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Remuneração</h3>
+                    <p>O piso salarial do Engenheiro Agrônomo varia por estado, mas geralmente fica entre R$ 4.500 e R$ 8.000 para iniciantes. Profissionais com especialização e experiência podem alcançar salários significativamente maiores.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faculdades" class="section">
+            <h2>Melhores Faculdades de Agronomia</h2>
+            <p>O Brasil possui excelentes instituições de ensino que oferecem o curso de Agronomia. Confira algumas das melhores:</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Públicas</h3>
+                    <ul>
+                        <li>ESALQ/USP (Piracicaba-SP)</li>
+                        <li>UFV (Viçosa-MG)</li>
+                        <li>UFRGS (Porto Alegre-RS)</li>
+                        <li>UnB (Brasília-DF)</li>
+                        <li>UFLA (Lavras-MG)</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Privadas</h3>
+                    <ul>
+                        <li>PUC-PR (Curitiba-PR)</li>
+                        <li>UNESP (Jaboticabal-SP)</li>
+                        <li>UFU (Uberlândia-MG)</li>
+                        <li>UNOESTE (Presidente Prudente-SP)</li>
+                        <li>UNIP (diversas cidades)</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Como Escolher</h3>
+                    <p>Considere fatores como: grade curricular, infraestrutura da instituição, oportunidades de estágio, localização, conceito no MEC e valor das mensalidades (no caso de instituições privadas).</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq" class="section">
+            <h2>Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Qual é a diferença entre Agronomia, Zootecnia e Engenharia Agrícola?</div>
+                <div class="faq-answer">
+                    <p>Enquanto a Agronomia foca no cultivo de plantas e na produção vegetal como um todo, a Zootecnia é especializada na produção animal. A Engenharia Agrícola está mais voltada para o desenvolvimento de máquinas, equipamentos e infraestrutura para o agronegócio.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">É necessário gostar de trabalhar ao ar livre?</div>
+                <div class="faq-answer">
+                    <p>Sim, embora existam oportunidades em ambientes fechados (laboratórios, escritórios), a profissão exige contato frequente com o campo e atividades práticas em fazendas e propriedades rurais.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Como é o estágio na Agronomia?</div>
+                <div class="faq-answer">
+                    <p>O estágio é obrigatório e geralmente realizado em propriedades rurais, empresas do agronegócio, cooperativas ou instituições de pesquisa. É uma oportunidade valiosa para aplicar os conhecimentos adquiridos e fazer networking.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Quais as especializações possíveis?</div>
+                <div class="faq-answer">
+                    <p>Existem diversas pós-graduações disponíveis, como: Fitotecnia, Solos e Nutrição de Plantas, Defesa Sanitária, Irrigação, Agricultura de Precisão, Gestão Ambiental, entre outras.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">A profissão é regulamentada?</div>
+                <div class="faq-answer">
+                    <p>Sim, a profissão de Engenheiro Agrônomo é regulamentada por lei. Após concluir o curso, é necessário registrar o diploma no CREA (Conselho Regional de Engenharia e Agronomia) para exercer legalmente a profissão.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Portal da Agronomia - Guia Completo sobre o Curso e a Profissão</p>
+        <p>Desenvolvido para auxiliar estudantes na escolha de sua carreira - 2023</p>
+    </footer>
+
+    <script>
+        // JavaScript para tornar as perguntas FAQ clicáveis
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

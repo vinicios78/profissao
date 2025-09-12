@@ -34,17 +34,6 @@
             z-index: 2;
         }
         
-        .header-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path fill="white" d="M50 15 L60 40 L85 40 L65 55 L75 85 L50 70 L25 85 L35 55 L15 40 L40 40 Z"></path></svg>');
-            background-size: 200px;
-        }
-        
         nav {
             background-color: #1b5e20;
             padding: 0.5rem;
@@ -101,17 +90,6 @@
         .hero-content {
             position: relative;
             z-index: 2;
-        }
-        
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.05;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle fill="%232e7d32" cx="50" cy="50" r="40"/></svg>');
-            background-size: 300px;
         }
         
         .hero h1 {
@@ -180,19 +158,20 @@
         }
         
         .card-image {
-            height: 180px;
-            background-color: #c8e6c9;
+            height: 200px;
             border-radius: 6px;
             margin: 1rem 0;
+            overflow: hidden;
+            background-color: #c8e6c9;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
         }
         
-        .card-image i {
-            font-size: 4rem;
-            color: #2e7d32;
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .table-container {
@@ -266,17 +245,25 @@
             background-color: #1b5e20;
         }
         
-        .image-placeholder {
+        .image-container {
             width: 100%;
-            height: 200px;
-            background-color: #c8e6c9;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 1rem 0;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            padding: 0.5rem;
+            background-color: #e8f5e9;
             color: #2e7d32;
-            font-weight: bold;
         }
         
         .highlight {
@@ -305,7 +292,6 @@
 </head>
 <body>
     <header>
-        <div class="header-background"></div>
         <div class="header-content">
             <h1><i class="fas fa-leaf"></i> Portal da Agronomia</h1>
             <p>Tudo sobre o curso e a profissão de Engenheiro Agrônomo</p>
@@ -325,7 +311,6 @@
     
     <div class="container">
         <div class="hero">
-            <div class="hero-background"></div>
             <div class="hero-content">
                 <h1>Agronomia: Ciência que Alimenta o Mundo</h1>
                 <p>Descubra tudo sobre uma das profissões mais importantes para o futuro da humanidade. Da produção de alimentos à preservação ambiental, o engenheiro agrônomo é peça fundamental no desenvolvimento sustentável.</p>
@@ -337,17 +322,16 @@
             <h2><i class="fas fa-info-circle"></i> Sobre o Curso de Agronomia</h2>
             <p>O curso de Agronomia, também conhecido como Engenharia Agronômica, é uma graduação com duração média de 5 anos que forma profissionais capacitados para melhorar e aumentar a produção agrícola e pecuária, sempre com foco na sustentabilidade ambiental.</p>
             
-            <div class="image-placeholder">
-                <i class="fas fa-tractor"></i> <img src="https://img.freepik.com/fotos-gratis/paisagem-de-prado-ensolarado_1112-134.jpg?semt=ais_incoming&w=740&q=80" >
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1625246339666-4cf64ae79f6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Estudantes de agronomia em campo de prática agrícola">
+                <div class="image-caption">Estudantes de agronomia em trabalho de campo</div>
             </div>
-            <div class>
-                
-            </div>
+            
             <div class="grid">
                 <div class="card">
                     <h3><i class="fas fa-user-graduate"></i> Perfil do Estudante</h3>
                     <div class="card-image">
-                        <i class="fas fa-seedling"></i>
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Estudante analisando planta">
                     </div>
                     <p>Interesse por ciências biológicas, tecnologia, meio ambiente e atividades ao ar livre. Habilidades em gestão, resolução de problemas e capacidade de análise são importantes.</p>
                 </div>
@@ -355,7 +339,7 @@
                 <div class="card">
                     <h3><i class="fas fa-clock"></i> Duração e Titulação</h3>
                     <div class="card-image">
-                        <i class="fas fa-graduation-cap"></i>
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Formatura de agronomia">
                     </div>
                     <p>5 anos (10 semestres) em período integral. Ao concluir o curso, o aluno recebe o título de Engenheiro Agrônomo e precisa registrar seu diploma no CREA (Conselho Regional de Engenharia e Agronomia).</p>
                 </div>
@@ -363,7 +347,7 @@
                 <div class="card">
                     <h3><i class="fas fa-chart-line"></i> Mercado em Expansão</h3>
                     <div class="card-image">
-                        <i class="fas fa-globe-americas"></i>
+                        <img src="https://images.unsplash.com/photo-1625246339666-4cf64ae79f6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Agricultura moderna">
                     </div>
                     <p>O Brasil é um dos maiores produtores de alimentos do mundo, o que garante um mercado de trabalho aquecido e com diversas oportunidades para os engenheiros agrônomos.</p>
                 </div>
@@ -374,13 +358,17 @@
             <h2><i class="fas fa-book"></i> Grade Curricular</h2>
             <p>A grade curricular do curso de Agronomia é bastante diversificada, mesclando disciplinas das áreas de ciências exatas, biológicas e humanas. Confira as principais disciplinas:</p>
             
-            <div class="image-placeholder">
-                <i class="fas fa-book-open"></i> <img src="https://www.unitins.br/cms/Midia/Imagens/Q6EZXMSLJCKAARPYVFRFDRI4L86MP1ZNXBSNNOLUK.jpeg">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1582719471384-8946c91c86a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Laboratório de solos">
+                <div class="image-caption">Laboratório de análise de solos</div>
             </div>
             
             <div class="grid">
                 <div class="card">
                     <h3><i class="fas fa-flask"></i> Ciências Básicas</h3>
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Laboratório de química">
+                    </div>
                     <ul>
                         <li>Matemática e Estatística</li>
                         <li>Física Geral</li>
@@ -392,6 +380,9 @@
                 
                 <div class="card">
                     <h3><i class="fas fa-seedling"></i> Formação Específica</h3>
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1591779051696-1c3fa1469a79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Campo agrícola">
+                    </div>
                     <ul>
                         <li>Solos e Nutrição de Plantas</li>
                         <li>Fitotecnia (Produção Vegetal)</li>
@@ -404,6 +395,9 @@
                 
                 <div class="card">
                     <h3><i class="fas fa-laptop"></i> Tecnologia e Gestão</h3>
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Agricultura de precisão">
+                    </div>
                     <ul>
                         <li>Mecanização Agrícola</li>
                         <li>Agricultura de Precisão</li>
@@ -418,70 +412,4 @@
         </section>
         
         <section id="notas" class="section">
-            <h2><i class="fas fa-chart-line"></i> Notas de Corte SISU 2023</h2>
-            <p>Confira as notas de corte aproximadas para o curso de Agronomia em algumas das principais universidades brasileiras:</p>
-            
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Instituição</th>
-                            <th>Localidade</th>
-                            <th>Nota de Corte</th>
-                            <th>Turno</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>UFV - Universidade Federal de Viçosa</td>
-                            <td>Viçosa/MG</td>
-                            <td>761</td>
-                            <td>Integral</td>
-                        </tr>
-                        <tr>
-                            <td>USP/ESALQ</td>
-                            <td>Piracicaba/SP</td>
-                            <td>794</td>
-                            <td>Integral</td>
-                        </tr>
-                        <tr>
-                            <td>UFLA - Universidade Federal de Lavras</td>
-                            <td>Lavras/MG</td>
-                            <td>752</td>
-                            <td>Integral</td>
-                        </tr>
-                        <tr>
-                            <td>UFRGS - Universidade Federal do RS</td>
-                            <td>Porto Alegre/RS</td>
-                            <td>743</td>
-                            <td>Integral</td>
-                        </tr>
-                        <tr>
-                            <td>UnB - Universidade de Brasília</td>
-                            <td>Brasília/DF</td>
-                            <td>734</td>
-                            <td>Integral</td>
-                        </tr>
-                        <tr>
-                            <td>UFMT - Universidade Federal de MT</td>
-                            <td>Cuiabá/MT</td>
-                            <td>698</td>
-                            <td>Integral</td>
-                        </tr>
-                        <tr>
-                            <td>UFPI - Universidade Federal do PI</td>
-                            <td>Teresina/PI</td>
-                            <td>682</td>
-                            <td>Integral</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="highlight">
-                <p><strong>Observação:</strong> As notas de corte variam a cada ano com base no número de vagas, candidatos e desempenho geral dos participantes do ENEM. Valores apresentados são referentes ao SISU 2023.</p>
-            </div>
-        </section>
-        
-        <section id="mercado" class="section">
-            <h2><i class="fas fa-b
+            <h2><i class="fas fa-chart
